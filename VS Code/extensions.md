@@ -1,8 +1,14 @@
-# Useful VS Code Extensions
-
-## Table of Contents
-- [Useful VS Code Extensions](#useful-vs-code-extensions)
-  - [Table of Contents](#table-of-contents)
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Categories](#categories)
+  - [Extensions for Specific Languages](#extensions-for-specific-languages)
+      - [NodeJS](#nodejs)
+  - [Extensions for DBs](#extensions-for-dbs)
+      - [Oracle](#oracle)
+  - [Extensions for Git](#extensions-for-git)
+  - [Web Development Extensions](#web-development-extensions)
+  - [Misc Extensions](#misc-extensions)
+- [Extensions](#extensions)
   - [Todo Tree *(ID: Gruntfuggly.todo-tree)*](#todo-tree-id-gruntfugglytodo-tree)
       - [Settings Example](#settings-example)
   - [Markdown All in One *(ID: yzhang.markdown-all-in-one)*](#markdown-all-in-one-id-yzhangmarkdown-all-in-one)
@@ -15,6 +21,40 @@
   - [GitHub Copilot *(ID: GitHub.copilot)*](#github-copilot-id-githubcopilot)
   - [GitHub Copilot Labs *(ID: GitHub.copilot-labs)*](#github-copilot-labs-id-githubcopilot-labs)
 
+
+# Categories
+
+## Extensions for Specific Languages
+
+#### NodeJS
+
+- [EJS Language Support](#ejs-language-support-id-digitalbrainstemjavascript-ejs-support)
+
+## Extensions for DBs
+
+#### Oracle
+
+- [Oracle Dev Tools](#oracle-developer-tools-for-vs-code-id-oracleoracledevtools)
+
+## Extensions for Git
+
+- [GitLens](#gitlens-id-eamodiogitlens)
+- [Git Graph](#git-graph-id-mhutchiegit-graph)
+
+## Web Development Extensions
+
+- [REST Client](#rest-client-id-humaorest-client)
+
+## Misc Extensions
+
+- [Todo Tree](#todo-tree-id-gruntfugglytodo-tree)
+- [Markdown All in One](#markdown-all-in-one-id-yzhangmarkdown-all-in-one)
+- [GitHub Copilot](#github-copilot-id-githubcopilot)
+- [GitHub Copilot Labs](#github-copilot-labs-id-githubcopilot-labs)
+- [Beautify](#beautify-id-hookyqrbeautify)
+
+
+# Extensions
 
 ## Todo Tree *(ID: Gruntfuggly.todo-tree)*
 
