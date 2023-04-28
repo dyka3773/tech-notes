@@ -1,5 +1,4 @@
-# Table of Contents
-- [Table of Contents](#table-of-contents)
+**Table of Contents**
 - [Categories](#categories)
   - [Extensions for Specific Languages](#extensions-for-specific-languages)
       - [Python](#python)

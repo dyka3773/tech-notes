@@ -7,3 +7,4 @@ This is a collection of notes on various technologies that me and some of my fri
 * [Batch](Batch/)
 * [Kafka](Kafka/kafka.md)
 * [VS Code](VS%20Code/)
+* [Useful GitHub Repositories](Useful%20GitHub%20Repos/README.md)
