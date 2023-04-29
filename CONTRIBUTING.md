@@ -21,6 +21,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
   - [Improving Existing Notes](#improving-existing-notes)
 - [Style Guide](#style-guide)
 - [Commit Messages](#commit-messages)
+- [Submitting Pull Requests](#submitting-pull-requests)
 - [Join The Project Team](#join-the-project-team)
 - [Attribution](#attribution)
 
@@ -68,6 +69,10 @@ If you want to add a new note to an existing folder, please make sure to include
 ## Commit Messages
 
 We do not use a strict pattern for the commit messages yet. However, we would like to keep the commit messages as simple as possible. This means that we prefer to use the imperative mood and avoid using too many emojis. If you are not sure about the style of your commit messages, please create a new discussion first.
+
+## Submitting Pull Requests
+
+The only restriction there is when submitting pull requests is that you **must** include the issue or discussion number in the pull request title. This helps us to keep track of the changes and makes it easier to review the pull request.
 
 ## Join The Project Team
 
