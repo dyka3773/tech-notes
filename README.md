@@ -8,6 +8,7 @@ This is a collection of notes on various technologies that me and some of my fri
 * [Kafka](Kafka/)
 * [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)
+* [General Tools](General%20Tools/)
 
 ## Contributing
 
