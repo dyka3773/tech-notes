@@ -1,4 +1,29 @@
+<!-- omit from toc -->
 # Apache Kafka
+
+<!-- omit from toc -->
+## Table of Contents
+- [Introduction](#introduction)
+- [Architecture](#architecture)
+- [Buzzwords](#buzzwords)
+  - [Topics](#topics)
+  - [Partitions](#partitions)
+  - [Brokers](#brokers)
+  - [Producers](#producers)
+  - [Consumers](#consumers)
+  - [Consumer Groups](#consumer-groups)
+  - [Kafka Cluster Controller](#kafka-cluster-controller)
+  - [Zookeeper](#zookeeper)
+- [Eco-System](#eco-system)
+  - [Kafka Connect](#kafka-connect)
+  - [Kafka Streams](#kafka-streams)
+  - [KSQLDB](#ksqldb)
+  - [Kafka REST Proxy](#kafka-rest-proxy)
+  - [Schema Registry](#schema-registry)
+- [Resources](#resources)
+    - [E-Books](#e-books)
+    - [Videos](#videos)
+
 
 ## Introduction
 
@@ -6,7 +31,11 @@ Apache Kafka is a distributed event streaming platform. It is used for building 
 
 ## Architecture
 
-To the Kafka process, everything is either a Producer, a Consumer or a Broker. The Producer and Consumer are clients of the Kafka process. The Broker is the Kafka process itself. The Producer and Consumer can be written in any language. The Broker is written in Java.
+To the Kafka process, everything is either a Producer, a Consumer or a Broker.
+The Producer and Consumer are clients of the Kafka process.
+The Broker is a part of the Kafka process itself.
+The Producer and Consumer can be written in any language (almost).
+The Broker is written in Java.
 
 ## Buzzwords
 
@@ -81,11 +110,45 @@ To the Kafka process, everything is either a Producer, a Consumer or a Broker. T
 - No two znodes can have the same name.
 - Each znode can be watched for changes.
 
+
+## Eco-System
+
+Kafka comes with some tools that make it easier to use and integrate with other systems for some common use cases. Some of these tools are:
+
+### Kafka Connect
+
+- Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other data systems.
+- It makes it simple to quickly define connectors that move large collections of data into and out of Kafka. The connectors can either be **source** connectors that import data into Kafka or **sink** connectors that export data out of Kafka. There are a lot of connectors available for use and you can also write your own.
+- It can ingest entire databases or collect metrics from all your application servers into Kafka topics, making the data available for stream processing with low latency.
+- It can also deliver data from Kafka topics into secondary indexes like Elasticsearch or into batch systems such as Hadoop for offline analysis.
+
+### Kafka Streams
+
+- Kafka Streams is a client library for building applications and microservices, where the input and output data are stored in Kafka clusters.
+- It allows you to build applications that process and analyze data stored in Kafka topics. It allows you to join, aggregate, and transform data from multiple topics using stateless and stateful operations. And it lets you create new Kafka topics from streams of data.
+
+### KSQLDB
+
+- KSQLDB is the streaming SQL engine for Apache Kafka built on top of Kafka Streams. It provides an easy-to-use, yet powerful interactive SQL interface for stream processing on Kafka, without the need to write code in a programming language such as Java or Python. 
+- It supports a wide range of powerful stream processing operations including aggregations, joins, windowing, sessionization, and much more. 
+- It supports both reading from and writing into Kafka topics, and integrates seamlessly with Kafka's exactly-once semantics.
+- **A KSQL Stream is a Topic with a Schema.**
+
+For a quick reference on KSQLDB, check out the [KSQLDB](./ksqldb.md) file.
+
+### Kafka REST Proxy
+
+- The Kafka REST Proxy provides a RESTful interface to a Kafka cluster, making it easy to produce and consume messages, view the state of the cluster, and perform administrative actions without using the native Kafka protocol or clients.
+- It is built on top of the Kafka protocol, but it is not part of Apache Kafka itself.
+- It is a good fit for scenarios where you want to integrate Kafka with existing systems that already have a REST API.
+
 ### Schema Registry
 
 - The Schema Registry provides serializers that plug into Kafka clients that handle the data schema for Kafka messages that are sent in the Avro format.
 - It stores a versioned history of all schemas based on a specified subject name strategy.
 - It allows the evolution of schemas according to the configured compatibility settings and expanded Avro support.
+
+Read more about it on the [Schema Registry](./schema-registry.md) file.
 
 
 ## Resources
@@ -99,6 +162,7 @@ To the Kafka process, everything is either a Producer, a Consumer or a Broker. T
 - [Apache Kafka Tutorials | Kafka 101]
 - [Schema Registry 101 | Introduction to Schema Registry]
 - [Apache Kafka for Beginners]
+- [Apache Kafka and KSQL in Action]
 
 
 <!-- Links -->
@@ -106,3 +170,4 @@ To the Kafka process, everything is either a Producer, a Consumer or a Broker. T
 [Apache Kafka Tutorials | Kafka 101]: https://www.youtube.com/playlist?list=PLa7VYi0yPIH0KbnJQcMv5N9iW8HkZHztH
 [Schema Registry 101 | Introduction to Schema Registry]: https://www.youtube.com/playlist?list=PLa7VYi0yPIH1KE10jwqmFEM61krd9WXQV
 [Apache Kafka for Beginners]: https://www.youtube.com/playlist?list=PLt1SIbA8guusxiHz9bveV-UHs_biWFegU
+[Apache Kafka and KSQL in Action]: https://www.youtube.com/watch?v=Z8_O0wEIafw

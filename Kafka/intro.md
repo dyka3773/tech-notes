@@ -1,1 +1,0 @@
-TODO: Add an introduction to Kafka
