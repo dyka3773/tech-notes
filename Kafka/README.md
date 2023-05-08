@@ -22,6 +22,7 @@
   - [Schema Registry](#schema-registry)
 - [Resources](#resources)
     - [E-Books](#e-books)
+    - [Documentation](#documentation)
     - [Videos](#videos)
 
 
@@ -155,7 +156,12 @@ Read more about it on the [Schema Registry](./schema-registry.md) file.
 
 #### E-Books
 
-- [Kafka: The Definitive Guide]
+- [Kafka: The Definitive Guide (Requires Email Confirmation)]
+- [Kafka: The Definitive Guide (PDF version but old)]
+
+#### Documentation
+
+- [Apache Kafka Quick Start]
 
 #### Videos
 
@@ -166,8 +172,12 @@ Read more about it on the [Schema Registry](./schema-registry.md) file.
 
 
 <!-- Links -->
-[Kafka: The Definitive Guide]: https://www.confluent.io/resources/kafka-the-definitive-guide/
+[Kafka: The Definitive Guide (Requires Email Confirmation)]: https://www.confluent.io/resources/kafka-the-definitive-guide/
+[Kafka: The Definitive Guide (PDF version but old)]: https://www.confluent.io/wp-content/uploads/confluent-kafka-definitive-guide-complete.pdf
 [Apache Kafka Tutorials | Kafka 101]: https://www.youtube.com/playlist?list=PLa7VYi0yPIH0KbnJQcMv5N9iW8HkZHztH
 [Schema Registry 101 | Introduction to Schema Registry]: https://www.youtube.com/playlist?list=PLa7VYi0yPIH1KE10jwqmFEM61krd9WXQV
 [Apache Kafka for Beginners]: https://www.youtube.com/playlist?list=PLt1SIbA8guusxiHz9bveV-UHs_biWFegU
 [Apache Kafka and KSQL in Action]: https://www.youtube.com/watch?v=Z8_O0wEIafw
+[Apache Kafka Quick Start]: https://developer.confluent.io/quickstart/kafka-docker/
+[Getting Started with Apache Kafka and Confluent REST Proxy]: https://developer.confluent.io/get-started/rest/
+[Quick Start for Confluent Platform]: https://docs.confluent.io/platform/current/platform-quickstart.html

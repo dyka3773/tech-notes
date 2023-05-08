@@ -59,7 +59,7 @@ The way to make `START` work almost like `CALL` is to use `/w /b` switches, whic
 
 > See also: [SS64][5], [Microsoft][6] Docs for `CALL` command
 
-## How FOR loops work
+## FOR loops
 
 TODO: Add notes on how FOR loops work [Help](https://ss64.com/nt/for.html)
 
