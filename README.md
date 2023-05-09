@@ -5,6 +5,9 @@ This is a collection of notes on various technologies that me and some of my fri
 ## Contents
 
 * [Batch](Batch/)
+* [Python](Python/)
+  * [Functional Paradigm](Python/functional-paradigm.md)
+  * [Advanced Use Cases](Python/advanced-use-cases.md)
 * [Kafka](Kafka/)
 * [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)
