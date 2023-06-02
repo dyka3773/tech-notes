@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Positional vs Keyword Arguments](#positional-vs-keyword-arguments)
 - [Default Arguments](#default-arguments)
 - [Variable Number of Arguments](#variable-number-of-arguments)
 
@@ -43,6 +44,71 @@ func(x=1, y=2)
 > **NOTE 1**: Positional arguments must come before keyword arguments. For example, `func(1, y=2)` is valid, but `func(x=1, 2)` is not.
 
 > **NOTE 2**: Keyword arguments can be passed in any order. For example, `func(y=2, x=1)` is valid.
+
+
+## Positional vs Keyword Arguments
+
+Positional arguments are the arguments that are passed to a function by their position.
+For example, in the following function call:
+```python
+def func(x, y):
+    pass
+
+func(1, 2) # `1` is the first positional argument and `2` is the second positional argument.
+```
+
+Keyword (or named) arguments are the arguments that are passed to a function by their name. (Their order does not matter.)
+For example, in the following function call:
+```python
+def func(x, y):
+    pass
+
+func(x=1, y=2) # `x=1` is the first keyword argument and `y=2` is the second keyword argument.
+```
+
+It is also possible to pass both types of arguments to a function.
+
+For example:
+```python
+def func(x, y):
+    pass
+
+func(1, y=2) # `1` is the first positional argument and `y=2` is the second keyword argument.
+```
+
+> **NOTE 1**: Positional arguments must come before keyword arguments. For example, `func(1, y=2)` is valid, but `func(x=1, 2)` is not.
+
+In Python 3.8 and later, it is possible to use `/` and `*` to specify which arguments are positional and which are keyword.
+For example:
+```python
+def func(x, y, /, z, w, *, a, b):
+    pass
+
+func(1, 2, 3, 4, a=5, b=6) # This is valid
+func(1, 2, z=3, w=4, a=5, b=6) # This is also valid
+func(1, 2, 3, 4, 5, 6) # This is not valid
+func(1, 2, 3, 4, 5, b=6) # This is not valid
+```
+
+In this case, `x` and `y` are positional **only** arguments, `z` and `w` are positional or keyword arguments, and `a` and `b` are keyword **only** arguments.
+
+Following that example we can also have positional only arguments and keyword only arguments.
+For example:
+```python
+def func1(x, y, /):
+    pass
+
+def func2(*, x, y):
+    pass
+
+func1(1, 2) # This is valid
+func1(x=1, y=2) # This is not valid
+
+func2(x=1, y=2) # This is valid
+func2(1, 2) # This is not valid
+```
+
+> **NOTE 2**: This is mostly used when the function is part of an API and you want to prevent the user from passing certain arguments in a certain way.
 
 
 ## Default Arguments
@@ -106,3 +172,13 @@ func(x=1, y=2, z=3) # kwargs will be {'x': 1, 'y': 2, 'z': 3}
 >
 > Please also note that the keywords `args` and `kwargs` are just a convention.
 > You can use any other name you want.
+
+You can also declare a function that accepts a fixed number of positional arguments and any number of keyword arguments.
+For example:
+```python
+def func(x, y, **kwargs):
+    pass
+
+func(1, 2, z=3) # kwargs will be {'z': 3}
+```
+
