@@ -25,7 +25,7 @@ This is a list of tools that we have found useful in our work.
 
 - A lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux.
 - It is configurable and extensible through the use of extensions and has a built-in debugging support, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
-- A list of useful extensions for VS Code can be found [here](VS%20Code/extensions.md).
+- A list of useful extensions for VS Code can be found [here](../VS%20Code/extensions.md).
 
 ### [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
