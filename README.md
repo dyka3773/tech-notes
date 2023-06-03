@@ -5,9 +5,13 @@ This is a collection of notes on various technologies that me and some of my fri
 ## Contents
 
 * [Batch](Batch/)
-* [Python](Python/)
+* [Python](Python/README.md)
   * [Functional Paradigm](Python/functional-paradigm.md)
-  * [Advanced Use Cases](Python/advanced-use-cases.md)
+  * [Arguments](Python/arguments.md)
+  * [Decorators](Python/decorators.md)
+  * [Conventions](Python/conventions.md)
+  * [Iterables and Generators](Python/iterables-and-generators.md)
+  * [Logging](Python/logging.md)
 * [Kafka](Kafka/)
 * [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)

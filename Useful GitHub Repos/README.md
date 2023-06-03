@@ -7,6 +7,8 @@
 - [HTML5 Website Templates](#html5-website-templates)
 - [Remote Jobs](#remote-jobs)
 - [Contribute To This Project](#contribute-to-this-project)
+- [Public APIs](#public-apis)
+- [Awesome Machine Learning](#awesome-machine-learning)
 
 
 ## Design Resources
@@ -63,3 +65,17 @@ Description: A list of semi to fully remote-friendly companies in tech.
 Link: [Here](https://github.com/Syknapse/Contribute-To-This-Project)
 
 Description: A tutorial to help first-time contributors to participate in a simple and easy project where you can learn how to create a pull request to contribute to a project on GitHub by adding your profile page and 3 Dev Resources you find useful in an HTML card element in the project's website.
+
+
+## Public APIs
+
+Link: [Here](https://github.com/bradtraversy/public-apis)
+
+Description: A collective list of free APIs for use in software and web development.
+
+
+## Awesome Machine Learning
+
+Link: [Here](https://github.com/josephmisiti/awesome-machine-learning)
+
+Descreption: A curated list of awesome machine learning frameworks, libraries and software (by language).
