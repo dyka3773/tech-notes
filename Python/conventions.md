@@ -7,12 +7,16 @@
 - [Casing](#casing)
 - [Example Conventions](#example-conventions)
 - [`this` and `self`](#this-and-self)
-- [`__init__` vs `__new__`](#__init__-vs-__new__)
+- [`*args` and `**kwargs`](#args-and-kwargs)
+- [General Coding Style](#general-coding-style)
 
 ## Intro
 
 Naming conventions are important in programming because they make the code more readable and understandable.
 In Python, there are several naming conventions that are used for different purposes.
+
+Most of the developers in the Python community follow the coding style that is defined in [PEP 8](https://www.python.org/dev/peps/pep-0008/).
+Some of the most important points of this style guide are highlighted in this document.
 
 
 ## Casing
@@ -47,28 +51,25 @@ foo = Foo(1)
 foo.bar() # 1
 ```
 
-## `__init__` vs `__new__`
 
-`__init__` is the constructor of the class and it is called after the object has been created.
-`__init__` is an instance method and it is used when you want to control the initialization of a new instance.
+## `*args` and `**kwargs`
 
-`__new__` is the method that creates the object and it is called before the object has been created.
-`__new__` is a static method and it is used when you want to control the creation of a new instance.
+`*args` and `**kwargs` are used to pass a variable number of arguments to a function.
+`*args` is used to pass a variable number of **positional** arguments and `**kwargs` is used to pass a variable number of **keyword** arguments.
 
-To be honest, I have never used `__new__` and I can only think of a few cases where it might be useful.
+See [Python Arguments](./arguments.md/#variable-number-of-arguments) for more information.
 
-For example, if you want to create a singleton class, you can override `__new__` to return the same instance every time.
+The names `args` and `kwargs` are just a convention and you can use any other names but it is recommended to stick to the convention.
 
-```python
-class Singleton:
-    _instance = None
 
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
+## General Coding Style
 
-s1 = Singleton()
-s2 = Singleton()
-print(s1 is s2) # True
-```
+- Use 4 spaces for indentation.
+- Use 1 space after commas and colons.
+- Use 2 blank lines between top-level functions and classes.
+- Use 1 blank line between methods in a class.
+- Use 1 blank line before a `return` statement.
+- Wrap lines that are longer than 79 characters.
+- Use `"""docstrings"""` to document classes, methods and functions.
+- Use `#` for comments.
+- Don't use fancy encodings if your code is meant to be used in international environments. Plain ASCII works best in any case. (Even though Python 3 supports UTF-8 by default)

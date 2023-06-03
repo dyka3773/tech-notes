@@ -10,6 +10,9 @@
   - [Linux](#linux)
 - [Hello World](#hello-world)
 - [Types](#types)
+- [Variables](#variables)
+- [Comments](#comments)
+- [Variable Scope](#variable-scope)
 
 
 ## Introduction
@@ -51,3 +54,134 @@ Python has the following built-in types:
 - Binary Types: `bytes`, `bytearray`, `memoryview` (b"Hello", bytearray(5), memoryview(bytes(5)))
 
 And of course, we can create our own types by using classes.
+
+
+## Variables
+
+Variables are containers for storing data values. Unlike other programming languages, Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.
+
+```python
+x = 5
+y = "John"
+print(x)
+print(y)
+```
+
+Variables do not need to be declared with any particular type and can even change type after they have been set.
+
+```python
+x = 4 # x is of type int
+x = "Sally" # x is now of type str
+print(x)
+```
+
+String variables can be declared either by using single or double quotes.
+
+```python
+x = "John"
+# is the same as
+x = 'John'
+```
+> **Note 1**: Triple quotes are used to span the string across multiple lines.
+> ```python 
+> x = """Lorem ipsum dolor sit amet,
+> consectetur adipiscing elit,
+> sed do eiusmod tempor incididunt
+> ut labore et dolore magna aliqua."""
+> ```
+
+
+Variable names are case-sensitive.
+
+```python
+a = 4
+A = "Sally"
+# A will not overwrite a
+```
+
+Variable names must start with a letter or the underscore character.
+
+```python
+# Legal variable names:
+myvar = "John"
+my_var = "John"
+_my_var = "John"
+myVar = "John"
+MYVAR = "John"
+myvar2 = "John"
+
+# Illegal variable names:
+2myvar = "John"
+my-var = "John"
+my var = "John"
+```
+
+> **Note 2**: Variable names can only contain alpha-numeric characters and underscores.
+
+> **Note 3**: For the naming convention of variables, see [this note](conventions.md/#casing).
+
+
+## Comments
+
+Comments are used to explain certain lines of code in plain English. They are not executed when the code is run.
+
+```python
+# This is a single-line comment
+
+"""
+This is a multi-line comment
+"""
+```
+
+> **Note**: Triple quotes are used to span the comment across multiple lines, to create multi-line strings and to create docstrings.
+
+
+## Variable Scope
+
+A variable is only available from inside the region it is created. This is called scope.
+
+```python
+def myfunc():
+  x = 300
+  print(x)
+
+myfunc() # This will print 300
+print(x) # While this will cause an error
+```
+
+In Python, variables that are created outside of a function (as in all of the examples above) are known as global variables. Global variables can be used by everyone, both inside of functions and outside.
+
+```python
+x = 300
+
+def myfunc():
+  print(x)
+
+myfunc() # This will print 300
+print(x) # And this will also print 300
+```
+
+If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.
+
+```python
+x = 300
+
+def myfunc():
+  x = 200
+  print(x)
+
+myfunc() # This will print 200
+print(x) # While this will print 300
+```
+
+The `global` keyword makes the variable global.
+
+```python
+def myfunc():
+  global x
+  x = 300
+
+myfunc() # This will print 300
+print(x) # And this will also print 300
+```
+> **Note**: This is not recommended, as it can cause confusion and lead to bugs. 
