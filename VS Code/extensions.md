@@ -1,6 +1,8 @@
 <!-- omit in toc -->
 # VS Code Useful Extensions
 
+> Note: Also see [Awesome VS Code](https://github.com/viatsko/awesome-vscode) for a curated list of delightful VS Code packages and resources.
+
 <!-- omit in toc -->
 ## Table of Contents
 - [Categories](#categories)
