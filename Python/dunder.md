@@ -13,11 +13,18 @@
 - [Dunder attributes](#dunder-attributes)
 - [`__name__` and `__main__`](#__name__-and-__main__)
 - [`__init__` vs `__new__`](#__init__-vs-__new__)
+- [`__init__.py`](#__init__py)
 
 
 ## Introduction
 
 In Python, there are a lot of methods and attributes that start and end with double underscores. 
+These are called dunder methods and dunder attributes.
+(They are also called magic methods and magic attributes)
+
+Most of them have derived from the early prototypes of Python, and they are used to implement a lot of the language's features.
+This means that some of them should not be used directly or overridden, unless you know what you are doing. Plus, some of them are rarely used.
+
 Let's take a look at some of them.
 
 ## General purpose dunder methods
@@ -72,10 +79,14 @@ Out of all these, the most important one is `__eq__`, which is used to compare o
 ## Dunder attributes
 
 - `__name__`: The name attribute. It is used to get the name of a module, class, function, method, descriptor, or generator instance.
+  > Note: In the case of a module, it is the name of the module with the path stripped off **BUT** it is `"__main__"` if the module is being run directly as the main program.
 - `__doc__`: The docstring attribute. It is used to get the docstring of a module, class, function, method, descriptor, or generator instance.
-- `__file__`: The file attribute. It is the name of the file in which the class or function was defined.
-- `__doc__`: The docstring attribute. It is the documentation string of the class or function.
+- `__file__`: The file attribute. It is the name of the file in which the class or function was defined. (It is rarely used.)
 - `__dict__`: The dictionary attribute. It is the dictionary containing the class's or function's namespace.
+- `__all__`: The all attribute. It is a list of strings containing the names of the objects that should be imported when `from <package_or_module_name> import *` is used.
+  > **Note**: This attribute is only used when `from <package_or_module_name> import *` is used. It doesn't hide any object (that is not contained in this variable but is present in the module or package) if the user imports that object explicitly. 
+  > 
+  > See [this][__all__] for more information.
 
 
 ## `__name__` and `__main__`
@@ -139,3 +150,22 @@ s1 = Singleton()
 s2 = Singleton()
 print(s1 is s2) # True
 ```
+
+
+## `__init__.py`
+
+An `__init__.py` file is used to mark directories on disk as Python package directories.
+This prevents directories with a common name, such as `string`, unintentionally hiding valid modules that occur later on the module search path.
+
+> **Note**: Having an `__init__.py` file in a directory is not required to import modules from that directory, it will just create a Namespace Package. But it is required if you want to create a regular package. See [my notes](custom-packages-modules.md/#packages) and [this][__init__.py not required] for more information.
+
+In the simplest case, `__init__.py` can just be an empty file.
+
+It usually contains the `__all__` variable, which is used to define what symbols are exported when `from <package> import *` is used on the package. See [this][__all__] for more information.
+
+
+
+<!-- References -->
+
+[__all__]: https://stackoverflow.com/questions/44834/what-does-all-mean-in-python
+[__init__.py not required]: https://stackoverflow.com/a/48804718/15552149
