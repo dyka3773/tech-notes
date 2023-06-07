@@ -13,6 +13,7 @@
 - [Variables](#variables)
 - [Comments](#comments)
 - [Variable Scope](#variable-scope)
+- [Advanced (Quirky) Python Features To Explore](#advanced-quirky-python-features-to-explore)
 
 
 ## Introduction
@@ -185,3 +186,27 @@ myfunc() # This will print 300
 print(x) # And this will also print 300
 ```
 > **Note**: This is not recommended, as it can cause confusion and lead to bugs. 
+
+
+## Advanced (Quirky) Python Features To Explore
+
+As in every language, there are many features that are idiomatic to Python. 
+My suggestion is to explore them as you go along.
+
+I have also appended my notes on some these features in case they might be of help.
+
+Here are some of these features:
+
+- List Comprehension
+  > [My Notes](./functional-paradigm.md/#list-comprehension) on this
+- Lambda Functions
+  > [My Notes](./functional-paradigm.md/#lambda) on this
+- Function Attributes
+- Decorators
+  > [My Notes](./decorators.md) on this
+- Generators
+- f-strings and their shorthand
+  > [Official Docs](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+
+  
+<!-- FIXME: Enhance this as you go -->

@@ -13,6 +13,8 @@ This is a collection of notes on various technologies that me and some of my fri
   * [Iterables and Generators](Python/iterables-and-generators.md)
   * [Logging](Python/logging.md)
   * [Dunder](Python/dunder.md)
+  * [Useful Snippets](Python/useful-snippets.md)
+  * [Custom Packages and Modules](Python/custom-packages-modules.md)
 * [Kafka](Kafka/)
 * [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)
