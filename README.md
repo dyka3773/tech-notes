@@ -16,8 +16,13 @@ This is a collection of notes on various technologies that me and some of my fri
   * [Useful Snippets](Python/useful-snippets.md)
   * [Custom Packages and Modules](Python/custom-packages-modules.md)
 * [Kafka](Kafka/)
+* [Oracle](Oracle/)
+  * [Useful Metadata Queries](Oracle/useful-metadata-queries.md)
 * [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)
+  * [Actions](Useful%20GitHub%20Repos/actions.md)
+  * [Funny Repos](Useful%20GitHub%20Repos/funny-repos.md)
+  * [Interesting Repos](Useful%20GitHub%20Repos/interesting-repos.md)
 * [General Tools](General%20Tools/)
 
 ## Contributing
