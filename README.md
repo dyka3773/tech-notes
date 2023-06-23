@@ -15,6 +15,7 @@ This is a collection of notes on various technologies that me and some of my fri
   * [Dunder](Python/dunder.md)
   * [Useful Snippets](Python/useful-snippets.md)
   * [Custom Packages and Modules](Python/custom-packages-modules.md)
+  * [Exceptions](Python/exceptions.md)
 * [Kafka](Kafka/)
 * [Oracle](Oracle/)
   * [Useful Metadata Queries](Oracle/useful-metadata-queries.md)
