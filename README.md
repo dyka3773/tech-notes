@@ -5,6 +5,7 @@ This is a collection of notes on various technologies that me and some of my fri
 ## Contents
 
 * [Batch](Batch/)
+* [Computer Networks (in Greek)](Computer%20Networking/Σημειώσεις%20υπό%20μορφή%20ερωτήσεων%20-%20Δίκτυα%20Υπολογιστών.rtf)
 * [Python](Python/README.md)
   * [Functional Paradigm](Python/functional-paradigm.md)
   * [Arguments](Python/arguments.md)
@@ -35,3 +36,4 @@ Be sure that we are not experts on any of the technologies in this repository. W
 ## Authors (for now)
 
 - [Hercules Konsoulas](https://github.com/dyka3773)
+- [Thanasis Tzimas](https://github.com/thanasis-tzimas)
