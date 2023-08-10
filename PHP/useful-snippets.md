@@ -4,6 +4,8 @@
 <!-- omit in toc -->
 ## Table of Contents
 
+- [Send email to Someone by POSTing data to a PHP script](#send-email-to-someone-by-posting-data-to-a-php-script)
+
 
 ## Send email to Someone by POSTing data to a PHP script
 
