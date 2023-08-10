@@ -6,6 +6,12 @@ This is a collection of notes on various technologies that me and some of my fri
 
 * [Batch](Batch/)
 * [Computer Networks (in Greek)](Computer%20Networking/Σημειώσεις%20υπό%20μορφή%20ερωτήσεων%20-%20Δίκτυα%20Υπολογιστών.rtf)
+* [General Tools](General%20Tools/)
+* [Kafka](Kafka/)
+* [Oracle](Oracle/)
+  * [Useful Metadata Queries](Oracle/useful-metadata-queries.md)
+* [PHP](PHP/)
+  * [Useful Snippets](PHP/useful-snippets.md)
 * [Python](Python/README.md)
   * [Functional Paradigm](Python/functional-paradigm.md)
   * [Arguments](Python/arguments.md)
@@ -17,15 +23,11 @@ This is a collection of notes on various technologies that me and some of my fri
   * [Useful Snippets](Python/useful-snippets.md)
   * [Custom Packages and Modules](Python/custom-packages-modules.md)
   * [Exceptions](Python/exceptions.md)
-* [Kafka](Kafka/)
-* [Oracle](Oracle/)
-  * [Useful Metadata Queries](Oracle/useful-metadata-queries.md)
-* [VS Code](VS%20Code/)
 * [Useful GitHub Repositories](Useful%20GitHub%20Repos/)
   * [Actions](Useful%20GitHub%20Repos/actions.md)
   * [Funny Repos](Useful%20GitHub%20Repos/funny-repos.md)
   * [Interesting Repos](Useful%20GitHub%20Repos/interesting-repos.md)
-* [General Tools](General%20Tools/)
+* [VS Code](VS%20Code/)
 
 ## Contributing
 
