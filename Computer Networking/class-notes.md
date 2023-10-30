@@ -6,6 +6,7 @@
 - [11/10/2023 - Πρώτο μάθημα](#11102023---πρώτο-μάθημα)
 - [23/10/2023 - 2ο Μάθημα](#23102023---2ο-μάθημα)
   - [Excersise analysis](#excersise-analysis)
+- [30/10/2023 - 4ο Μάθημα](#30102023---4ο-μάθημα)
 
 
 ## 11/10/2023 - Πρώτο μάθημα
@@ -22,4 +23,92 @@
 - When the excercise says that each network is in need of eg 13 hosts the way we sould calculate the required address is x=13 + 1 (for the router) + 2 (1 broadcast + 1 network) = 16. So we need to find the smallest power of 2 that is equal or greater than 16. This is 2^4=16. So we need 4 bits for the host part of the address. So the subnet mask is /28.
 - In the end of the excercise we need to add the subnets of every peer-to-peer connection between the routers. So we need to add 1 subnet for each connection. These subnets are /30 because we need 2 hosts (1 for each router) + 2 (1 broadcast + 1 network) = 4. So we need 2 bits for the host part of the address. If we have 3 routers (eg A, B, C) that all connect to a central router (D) we need 3 subnets (A-D, B-D, C-D), each with a /30 subnet mask. So in total we need 12 more IP addresses (3 subnets * 4 IPs/subnet).
 - When increasing the number of the host requirements in a subnet beyond what its current mask can provide, the whole subnet is moved to a later IP address and changes its subnet mask to satisfy the new requirements. The new subnet that will be created needs to start from an IP that matches the ones and zeroes of the new subnet mask. For example if the latest occupied IP in a network is `192.168.1.83` and a new subnet comes that needs to have 13 hosts (`/28` subnet mask) then the new subnet will be `192.168.1.96/28` and not `192.168.1.84/28` because the latter does not start with 4 zeroes and doesn't end with 4 ones when treated as a binary number.
-- 
+
+
+## 30/10/2023 - 4ο Μάθημα
+
+- Οι διαδικτυακες συσκευες τρεχουν μονο τα 3 κατώτερα επιπεδα του μοντέλου OSI και τα υπολοιπα τρέχουν στους τελικούς κόμβους ενός δικτύου (end systems).
+- Υπάρχουν 2 πιθανές αρχιτεκτονικές για web applications:
+  - Client - Server
+    * Ο client είναι ο browser και ο server είναι ο web server (συνήθως).
+    * Οι σέρβερ:
+      * Είναι πάντα on.
+      * Έχουν σταθερή IP.
+    * Οι clients:
+      * Είναι συνήθως off.
+      * Έχουν δυναμική IP.
+      * Είναι πολλοί.
+  - Peer-to-Peer
+    * no always-on server
+    * arbitrary end systems directly communicate
+    * peers request service from other peers, provide service in return to other peers
+    * self scalability: new peers bring new service capacity, as well as new service demands
+    * peers are intermittently connected and change IP addresses
+- Client Processes initiate communication
+- Server Processes wait to be contacted and end the communication
+- Applications with P2P architectures have both client and server processes running on the same end system
+- Sockets: A buffer that is used by the application layer to keep data for each connection (usually).
+- To recieve a message, each process must have and ID, in order to do that we use the IP address and the port number of that process.
+- A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event
+- Πράγματα που αφορούν το Transport layer:
+  - data integrity: some apps require 100% reliable data transfer (eg file transfering) and some other apps don't (eg audio)
+  - timing: some apps require low delay to be effective (eg real time apps) and some other apps don't (eg email)
+  - throughput: some apps require minimum amount of throughput to be effective (eg multimedia) and some other apps don't (eg email, file transfer)
+  - security: some apps require encryption of data (eg online shopping) and some other apps don't (eg audio)
+- Το transport layer παρέχει τις παρακάτω υπηρεσίες:
+  - Connection-oriented service: TCP
+    * εγγύηση παράδοσης, flow control, congestion control, connection-oriented (χρειάζεται setup μεταξύ πελάτη και εξυπηρετητη)
+    * Δεν προσφέρει: timing, minimum throughput guarantee, security
+    * Χρησιμοποιείται για file transfer, email, web documents
+  - Connectionless service: UDP
+    * Απλό, χωρίς σύνδεση, καμία εγγύηση παράδοσης, καμία εγγύηση σειράς παράδοσης, καμία συντήρηση καταστάσεων
+    * Χρησιμοποιείται για streaming multimedia, real-time audio/video, DNS
+- Web & HTTP:
+  - A web page constists of multiple objects like HTML file, JPEG image, Java applet, audio file, etc.
+  - Each object is addressable by a URL (Uniform Resource Locator)
+  - HTTP (HyperText Transfer Protocol) is the Web's application layer protocol and uses the client-server model
+  - HTTP uses TCP as its underlying transport protocol and creates a socket on port 80
+  - HTTP is stateless, which means that the server does not keep any information about past client requests
+- Persistent HTTP
+  - server leaves connection open after sending response
+  - subsequent HTTP messages between same client/server sent over open connection
+  - client sends requests as soon as it encounters a referenced object
+  - as little as one RTT for all the referenced objects
+- Non-persistent HTTP
+  - at most one object is sent over a TCP connection
+  - HTTP/1.0 uses non-persistent HTTP
+  - RTT for each referenced object
+- HTTP request message
+  - ASCII (human-readable format)
+  - Request methods (GET, POST, HEAD, PUT, DELETE, TRACE, OPTIONS, CONNECT)
+  - Header lines
+  - Optional message body
+- HTTP response status codes
+  - status codes appear in first line of HTTP response (and in first line of server-to-server response)
+  - they are split into 5 classes:
+    - 1xx: informational
+    - 2xx: success
+    - 3xx: redirection
+    - 4xx: client error
+    - 5xx: server error
+  - some sample status codes:
+    - 200 OK
+    - 301 Moved Permanently
+    - 400 Bad Request
+    - 404 Not Found
+    - 505 HTTP Version Not Supported
+- Cookies: keeping "state"
+- Web caching (proxy server)
+  - goal: satisfy client request without involving origin server
+  - user sets browser: Web accesses via cache
+  - browser sends all HTTP requests to cache
+  - if object in cache: cache returns object
+  - else cache requests object from origin server, then returns object to client
+  - cache acts as both client (to the origin server) and server (to the client)
+  - Pros: reduced response time for client request, reduced traffic on an institution's access link
+  - Cons: cache may be out of date, cache may serve stale object
+  - typically cache is installed by ISP (university, company, residential ISP)
+- Conditional GET
+  - Goal: don't send object if cache has up-to-date cached version
+  - client specifies date of cached copy in HTTP request using the `If-modified-since: <date>` header line
+  - server response contains no object if cached copy is up-to-date: `HTTP/1.0 304 Not Modified`
