@@ -7,6 +7,7 @@
 - [23/10/2023 - 2ο Μάθημα](#23102023---2ο-μάθημα)
   - [Excersise analysis](#excersise-analysis)
 - [30/10/2023 - 4ο Μάθημα](#30102023---4ο-μάθημα)
+- [13/11/2023 - 7ο Μάθημα](#13112023---7ο-μάθημα)
 
 
 ## 11/10/2023 - Πρώτο μάθημα
@@ -112,3 +113,35 @@
   - Goal: don't send object if cache has up-to-date cached version
   - client specifies date of cached copy in HTTP request using the `If-modified-since: <date>` header line
   - server response contains no object if cached copy is up-to-date: `HTTP/1.0 304 Not Modified`
+
+
+## 13/11/2023 - 7ο Μάθημα
+
+- Το TCP είναι connection-oriented, δηλαδή χρειάζεται handshaking (3-way handshake) μεταξύ client και server πριν ξεκινήσει η επικοινωνία.
+- Είναι reliable, δηλαδή εγγυάται την παράδοση των δεδομένων.
+- Κάνει congestion & flow control, δηλαδή ρυθμίζει τον ρυθμό μετάδοσης των δεδομένων ώστε να μην υπάρχει συμφόρηση.
+- TCP Segment Structure (32 bit per line until the end of the header):
+  - Source port number: 16 bits + Destination port number: 16 bits (Τα port numbers του αποστολέα και του παραλήπτη)
+  - Sequence number: 32 bits (Αριθμός σειράς του segment σε ενα ευρύτερο stream)
+  - Acknowledgement number: 32 bits (Αριθμός σειράς του επόμενου segment που περιμένει ο αποστολέας)
+  - Header length (Το μέγεθος του παραθύρου που έχει ο παραλήπτης): 4 bits + not used: 4 bits + Control bits (Τα flags είναι: URG, ACK, PSH, RST, SYN, FIN και χρησιμοποιούνται για να δείξουν την κατάσταση του segment): 8 bits + receive window (Το μέγεθος του παραθύρου χρόνου που έχει ο παραλήπτης για να στείλει ACK): 16 bits
+  - Checksum: 16 bits + Urgent pointer (Χρησιμοποιείται για να δείξει το offset του τελευταίου byte του urgent data): 16 bits
+  - Options: 0-320 bits (variable length)
+  - Data: 0-65,535 bytes (variable length)
+- TCP seq. numbers and ACKs
+  - Seq. Numbers: byte stream "number" of first byte in segment's data
+  - ACKs: seq number of next byte expected from other side (cumulative ACK)
+- TCP Round Trip Time (RTT) and Timeout
+  - RRT varies, mainly because of network congestion or distance
+  - When RRT is too short, the sender will timeout too often and retransmit unnecessarily
+  - When RRT is too long, the sender will wait too long before retransmitting
+  - Estimating the RTT
+    * SampleRTT: measured time from segment transmission until ACK receipt
+    * In case of retransmission, do not use measured SampleRTT
+    * SampleRTT will vary, want estimated RTT "smoother" (average several recent measurements, not just current SampleRTT)
+- TCP reliable data transfer with ACKs
+  - duplicate ACKs (Αν ο αποστολέας λάβει 3 συνεχόμενα duplicate ACKs τότε θα ξαναστείλει το segment που έχει τον μικρότερο αριθμό σειράς από το ACK που περίμενε)
+  - timeout (Αν ο αποστολέας δεν λάβει ACK μέσα σε ένα χρονικό διάστημα ίσο με τον χρόνο που υπολόγισε ότι χρειάζεται για να φτάσει το segment τότε θα ξαναστείλει το segment που έχει τον μικρότερο αριθμό σειράς από το ACK που περίμενε)
+  - Ο αποστολέας στέλνει διπλότυπο ACK στη περίπτωση που το Seq. Number του segment που λάβει είναι μεγαλύτερο από το Acknowledgement number που περίμενε
+- TCP Congestion Control
+  - 
