@@ -42,6 +42,7 @@ This is a list of tools that we have found useful in our work.
 - A free integrated development environment (IDE) that simplifies the development and management of Oracle Database.
 - It offers development and DBA features which include a SQL worksheet, a DBMS object browser, a PL/SQL editor, a DBA console, a project manager, a migration tool, a reports interface, and more.
 
+<!-- markdown-link-check-disable-next-line -->
 ### [MySQL Workbench](https://www.mysql.com/products/workbench/)
 
 - A free integrated development environment (IDE) that simplifies the development and management of MySQL databases.
