@@ -9,6 +9,7 @@
 - [30/10/2023 - 4ο Μάθημα](#30102023---4ο-μάθημα)
 - [13/11/2023 - 7ο Μάθημα](#13112023---7ο-μάθημα)
 - [8/1/2024 - ? Μάθημα (Επανάληψη Υποδικτύωσης)](#812024----μάθημα-επανάληψη-υποδικτύωσης)
+- [10/1/2024 - ? Μάθημα (Επανάληψη Ύλης)](#1012024----μάθημα-επανάληψη-ύλης)
 
 
 ## 11/10/2023 - Πρώτο μάθημα
@@ -220,3 +221,68 @@
 > - | Θ2 (8)              | empty (8) | Α-Λ (4) | empty (4) | Α-Θ (4) | Α-Π (4) |
 > - | Η (16)                          | Λ (16)                                  |
 > - | Θ1 (32)                                                                   |
+
+
+## 10/1/2024 - ? Μάθημα (Επανάληψη Ύλης)
+
+- Ανάλυση των θεματων της εξετασης στις 2/2/23
+
+**Άσκηση 1**:
+
+μεγεθος IP πακέτου = 1220 bytes
+MTU ζευξης = 620 bytes
+
+Βρείτε τα πεδία 
+- length
+- MF
+- offset
+
+**Απάντηση**:
+
+packet size = 1220 bytes -> 1200 bytes data + 20 bytes header
+MTU = 620 bytes -> 600 bytes data + 20 bytes header -> 600 bytes data
+
+600/8 = 75
+
+1. fragment:
+   - length = 620 bytes
+   - MF = 1
+   - offset = 0
+2. fragment:
+   - length = 620 bytes
+   - MF = 0
+   - offset = 75
+
+
+**Άσκηση 2**:
+
+μεγεθος IP πακέτου = 1220 bytes
+MTU ζευξης = 610 bytes
+
+Βρείτε τα πεδία
+- length
+- MF
+- offset
+
+
+**Απάντηση**:
+
+packet size = 1220 bytes -> 1200 bytes data + 20 bytes header
+MTU = 610 bytes -> 590 bytes data + 20 bytes header -> 590 bytes data
+
+590/8 = 73.75 -> 73 -> 73*8 = 584 bytes
+
+1. fragment:
+   - length = 584 + 20 = 604 bytes
+   - MF = 1
+   - offset = 0
+2. fragment: (616 bytes remaining)
+   - length = 584 + 20 = 604 bytes 
+   - MF = 1
+   - offset = 73
+3. fragment: (32 bytes remaining)
+    - length = 32 + 20 = 52 bytes 
+    - MF = 0
+    - offset = 146
+
+
