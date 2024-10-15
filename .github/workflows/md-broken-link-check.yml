@@ -1,6 +1,9 @@
 name: Check Markdown for broken links
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * 0' # @weekly
 
 jobs:
   markdown-link-check:
