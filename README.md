@@ -38,4 +38,4 @@ Be sure that we are not experts on any of the technologies in this repository. W
 ## Authors (for now)
 
 - [Hercules Konsoulas](https://github.com/dyka3773)
-- [Thanasis Tzimas](https://github.com/thanasis-tzimas)
+- [Thanasis Tzimas](https://github.com/atzimas)
