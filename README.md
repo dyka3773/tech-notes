@@ -1,5 +1,7 @@
 # Tech Notes
 
+[![Check Markdown for broken links](https://github.com/dyka3773/tech-notes/actions/workflows/md-broken-link-check.yml/badge.svg)](https://github.com/dyka3773/tech-notes/actions/workflows/md-broken-link-check.yml)
+
 This is a collection of notes on various technologies that me and some of my friends have worked with. The notes are organized by technology and are written (mostly) in Markdown. The notes are intended to be a quick reference for ourselves, but we hope they are useful to others as well.
 
 ## Contents
