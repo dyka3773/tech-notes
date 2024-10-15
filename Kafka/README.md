@@ -232,8 +232,6 @@ public class ConsumerDemo {
 }
 ```
 
-> Note: This example is a simple consumer that will consume messages from the beginning of the topic and will run forever blocking the main thread. For a more complex example, see [My Java Consumer Example](JavaConsumerExample.java)
-
 A similar example in Python:
 
 ```python
