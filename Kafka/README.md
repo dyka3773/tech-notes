@@ -50,14 +50,13 @@ They can send messages to a specific topic or a partition of a topic.
 Where the message is sent depends on the partitioning strategy used and the key of the message which is optional.
 The partitioning strategy can be round-robin (no-key) or based on the key of the message (or any other custom strategy).
 Their usual configuration is something like this:
-  
-  ```properties
-  bootstrap.servers=localhost:9092
-  key.serializer=org.apache.kafka.common.serialization.StringSerializer
-  value.serializer=org.apache.kafka.common.serialization.StringSerializer
+```properties
+bootstrap.servers=localhost:9092
+key.serializer=org.apache.kafka.common.serialization.StringSerializer
+value.serializer=org.apache.kafka.common.serialization.StringSerializer
 
-  topic.name=first_topic
-  ```
+topic.name=first_topic
+```
 
 The `bootstrap.servers` is the address of the Kafka cluster.
 The `key.serializer` and `value.serializer` are the serializers for the key and value of the message.
@@ -168,16 +167,15 @@ The consumer group is a logical grouping of consumers that consume messages from
 Each consumer group has a unique group id.
 Usually, each consumer commits the offset of the last message that it consumed to the Kafka cluster so that if it crashes, the next consumer that belongs in the same group will know from where to start consuming messages.
 Their usual configuration is something like this:
-  
-  ```properties
-  bootstrap.servers=localhost:9092
-  key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
-  value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+```properties
+bootstrap.servers=localhost:9092
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
-  topic.name=first_topic
-  group.id=my-consumer-group
-  auto.offset.reset=earliest
-  ```
+topic.name=first_topic
+group.id=my-consumer-group
+auto.offset.reset=earliest
+```
 
 The `bootstrap.servers` is the address of the Kafka cluster.
 The `key.deserializer` and `value.deserializer` are the deserializers for the key and value of the message.
@@ -506,7 +504,7 @@ public class ProducerDemo {
 ### Other Useful Tools
 
 - REST Proxy - It is a service that is used to manage the Kafka cluster using a REST API. It is usually deployed as a docker container and usually on the same machine as the Kafka cluster. It is also usually deployed with the Schema Registry (see [this](#schema-registry)).
-- KSQL - It is a streaming SQL engine that is used to query the Kafka cluster using SQL queries. It allows you to create streams and tables from topics, join streams and tables, filter streams and tables, etc. 
+- KSQL - It is a streaming SQL engine that is used to query the Kafka cluster using SQL queries. It allows you to create streams and tables from topics, join streams and tables, filter streams and tables, etc. (see also [this](./ksqldb.md))
 - Kafka Connect - It is a service that is used to connect the Kafka cluster with other systems. It allows you to create connectors that can be used to read data from other systems and write them to Kafka topics or read data from Kafka topics and write them to other systems. It also allows you to create transformations that can be used to transform the data before writing them to Kafka topics or after reading them from Kafka topics.
 - Control Center - It is a service that is used to monitor the Kafka cluster. It allows you to monitor the topics, the producers, the consumers, the brokers, etc. It also allows you to create alerts for when something goes wrong with the Kafka cluster.
 

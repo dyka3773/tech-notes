@@ -4,11 +4,15 @@
 <!-- omit in toc -->
 ## Table of Contents
 
+- [Schemas and Users](#schemas-and-users)
+- [DBMS Metadata Views](#dbms-metadata-views)
+- [Invisible Columns](#invisible-columns)
+- [TRANSACTION\_ID](#transaction_id)
+
 
 ## Schemas and Users
 
 In Oracle, a schema has a one-to-one relationship with a user. A schema is a collection of database objects (tables, views, indexes, etc.) and a user is a database account that can connect to the database.
-
 
 ## DBMS Metadata Views
 
