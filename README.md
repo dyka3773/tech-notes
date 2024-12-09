@@ -7,10 +7,10 @@ This is a collection of notes on various technologies that me and some of my fri
 ## Contents
 
 * [Batch](Batch/batch-notes.md)
-* [Computer Networks (in Greek)](Computer%20Networking/Σημειώσεις%20υπό%20μορφή%20ερωτήσεων%20-%20Δίκτυα%20Υπολογιστών.rtf)
-* [General Code Design and Practices Notes](General%20Code%20Design%20and%20Practices%20Notes/)
+* Computer Networking
+  * [Computer Networking Course Notes (in Greek)](Computer%20Networking/Σημειώσεις%20υπό%20μορφή%20ερωτήσεων%20-%20Δίκτυα%20Υπολογιστών.rtf)
+  * [Class Notes](Computer%20Networking/class-notes.md)
 * [General Tools](General%20Tools/)
-* [Git](Git/)
 * [Kafka](Kafka/)
 	* [Kafka ksqldb](Kafka/ksqldb.md)
 * [Oracle](Oracle/)

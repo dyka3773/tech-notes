@@ -30,7 +30,7 @@ The following diagram shows the hierarchy of the most common exceptions in Pytho
 
 ![](https://python3.info/_images/exception-hierarchy.png)
 
-> Source: [python3.info](https://python3.info/basics/exception/hierarchy.html)
+> Source: [python3.info](https://python3.info/basics/exception/raise.html)
 
 
 ## Handling Exceptions
