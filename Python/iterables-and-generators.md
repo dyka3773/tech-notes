@@ -27,7 +27,7 @@ class MyIterator:
             self.i += 1
             return i
         else:
-            raise StopIteration
+            raise StopIteration # This is how we signal the end of the sequence
 
 # This is a generator
 def my_generator(n):

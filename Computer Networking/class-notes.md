@@ -8,6 +8,8 @@
   - [Excersise analysis](#excersise-analysis)
 - [30/10/2023 - 4ο Μάθημα](#30102023---4ο-μάθημα)
 - [13/11/2023 - 7ο Μάθημα](#13112023---7ο-μάθημα)
+- [8/1/2024 - ? Μάθημα (Επανάληψη Υποδικτύωσης)](#812024----μάθημα-επανάληψη-υποδικτύωσης)
+- [10/1/2024 - ? Μάθημα (Επανάληψη Ύλης)](#1012024----μάθημα-επανάληψη-ύλης)
 
 
 ## 11/10/2023 - Πρώτο μάθημα
@@ -21,6 +23,7 @@
 - For future reference `/24`=`255.255.255.0`. This means that the usable hosts are `2^8-2=254` (the `-2` is because the first and last IP are reserved for the network and broadcast address respectively).
 
 ### Excersise analysis
+
 - When the excercise says that each network is in need of eg 13 hosts the way we sould calculate the required address is x=13 + 1 (for the router) + 2 (1 broadcast + 1 network) = 16. So we need to find the smallest power of 2 that is equal or greater than 16. This is 2^4=16. So we need 4 bits for the host part of the address. So the subnet mask is /28.
 - In the end of the excercise we need to add the subnets of every peer-to-peer connection between the routers. So we need to add 1 subnet for each connection. These subnets are /30 because we need 2 hosts (1 for each router) + 2 (1 broadcast + 1 network) = 4. So we need 2 bits for the host part of the address. If we have 3 routers (eg A, B, C) that all connect to a central router (D) we need 3 subnets (A-D, B-D, C-D), each with a /30 subnet mask. So in total we need 12 more IP addresses (3 subnets * 4 IPs/subnet).
 - When increasing the number of the host requirements in a subnet beyond what its current mask can provide, the whole subnet is moved to a later IP address and changes its subnet mask to satisfy the new requirements. The new subnet that will be created needs to start from an IP that matches the ones and zeroes of the new subnet mask. For example if the latest occupied IP in a network is `192.168.1.83` and a new subnet comes that needs to have 13 hosts (`/28` subnet mask) then the new subnet will be `192.168.1.96/28` and not `192.168.1.84/28` because the latter does not start with 4 zeroes and doesn't end with 4 ones when treated as a binary number.
@@ -144,4 +147,142 @@
   - timeout (Αν ο αποστολέας δεν λάβει ACK μέσα σε ένα χρονικό διάστημα ίσο με τον χρόνο που υπολόγισε ότι χρειάζεται για να φτάσει το segment τότε θα ξαναστείλει το segment που έχει τον μικρότερο αριθμό σειράς από το ACK που περίμενε)
   - Ο αποστολέας στέλνει διπλότυπο ACK στη περίπτωση που το Seq. Number του segment που λάβει είναι μεγαλύτερο από το Acknowledgement number που περίμενε
 - TCP Congestion Control
-  - 
+
+
+## 8/1/2024 - ? Μάθημα (Επανάληψη Υποδικτύωσης)
+
+**Άσκηση 1**:
+Σε μια εταιρεία δώθηκε το παρακάτω δίκτυο: 195.251.123.0/25 (Άρα 195.251.123.0 - 195.251.123.127)
+Το δίκτυο αυτό θα χρησιμοποιηθεί για την σύνδεση 4 routers. 
+Τα routers αυτά θα έχουν τις εξής απαιτήσεις:
+Αθήνα (Α) - 13 hosts
+Θεσσαλονίκη (Θ1) - 12 hosts
+Θεσσαλονίκη (Θ2) - 4 hosts
+Πάτρα (Π) - 4 hosts
+Λάρισα (Λ) - 3 hosts
+
+Όλοι οι routers συνδέονται με ευθεια ζευξη με τον router της Αθήνας (Α).
+Ο router της Αθήνας (Α) συνδέεται με τον ISP για την πρόσβαση στο Internet. (Δε μας ενδιαφερει αυτό)
+Αναθέστε τις απαιτούμενες διευθύνσεις IP στα routers και στις ζεύξεις τους.
+
+**Απάντηση**:
+
+- Αθήνα (Α) -> 13 hosts + 1 Router = 14 -> 2^4=16 -> /28 -> 195.251.123.0/28 (195.251.123.0-15)
+> Αυτο που παρατηρω ειναι οτι εχει νοημα κοιτώντας τη μασκα, να υπολογιζω το τελευταιο κομματι σε bits, δηλαδη 195.251.123.*|0|?|?|?|?|?|?|?|*
+> Ετσι αν το μεγαλυτερο μμ υποδίκτυο χρειαζεται να κατακερματίσει χρησιμοποιώντας 16 bits, δλδ 2^4=16 και αρα θα πρεπει να χρησιμοποιησει /28 μασκα,
+> τοτε ο υπολογισμος της διευθυνσης του υποικτυου μπορει να υπολογιστει με βαση τους συνδιασμους των bits αυτών.
+> Στην προκειμενη περιπτωση αν χρειαζομαι 4 bits για το υποδικτυο, υπολοιπονται 3 ακομα bits για διαφορετικους συνδιασμους άλλων υποδικτύων (2^3=8 υποδίκτυα με 16 hosts)
+- Θεσσαλονίκη (Θ1) -> 12 hosts + 1 Router = 13 -> 2^4=16 -> /28 -> 195.251.123.16/28 (195.251.123.16-31)
+- Θεσσαλονίκη (Θ2) -> 4 hosts + 1 Router = 5 -> 2^3=8 -> /29 -> 195.251.123.32/29 (195.251.123.32-39)
+- Πάτρα (Π) -> 4 hosts + 1 Router = 5 -> 2^3=8 -> /29 -> 195.251.123.40/29 (195.251.123.40-47)
+- Λάρισα (Λ) -> 3 hosts + 1 Router = 4 -> 2^3=8 -> /29 -> 195.251.123.48/29 (195.251.123.48-55)
+- Συνδέσεις:
+  - Αθήνα (Α) - Θεσσαλονίκη -> 2 hosts + 2 Routers = 4 -> 2^2=4 -> /30 -> 195.251.123.56/30 (195.251.123.56-59)
+  - Αθήνα (Α) - Πάτρα -> 2 hosts + 2 Routers = 4 -> 2^2=4 -> /30 -> 195.251.123.60/30 (195.251.123.60-63)
+  - Αθήνα (Α) - Λάρισα -> 2 hosts + 2 Routers = 4 -> 2^2=4 -> /30 -> 195.251.123.64/30 (195.251.123.64-67)
+
+> Ενας επισης ευκολος τροπος να δουμε τον κατακερματισμο ειναι να φτιαξουμε ενα μίνι γραφημα με 32αδες απο IPs οπου να χωριζουμε για παράδειγμα:
+> - | Α (16)                          | Θ1 (16)                   |
+> - | Θ2 (8)              | Π (8)     | Λ (8) | Α-Θ (4) | Α-Π (4) | 
+> - | Α-Λ (4) | empty (4) | empty (8) | empty (16)                |
+> - | empty (32)                                                  |
+
+**Άσκηση 2**:
+
+Υπολογίστε τις μετατροπες που πρεπει να γινουν στο παραπάνω δίκτυο για να ισχυουν οι παρακάτω απαιτήσεις:
+- Λ += 3 hosts
+
+**Aπάντηση**:
+
+- Λ += 3 hosts -> 3+3 hosts + 1 router = 7 -> 2^4=16 -> /28 -> 195.251.123.80/28 (195.251.123.80-95) (Αυτό είναι το μόνο που αλλάζει, το υπόλοιπο παραμένει ίδιο και οι προηγούμενες IP μένουν κενες)
+> Με βάση το παραπάνω note μου, πλεον ο κατακερματισμός είναι κάπως έτσι:
+> - | Α (16)                          | Θ1 (16)                       |
+> - | Θ2 (8)              | Π (8)     | empty (8) | Α-Θ (4) | Α-Π (4) |
+> - | Α-Λ (4) | empty (4) | empty (8) | Λ (16)                        |
+> - | empty (32)                                                      |
+
+**Άσκηση 3**:
+
+Υπολογιστε τις μετατροπες που πρέπει να γίνουν στο παραπάνω δίκτυο για να ισχύουν οι παρακάτω απαιτήσεις:
+- Θ1 += 3 hosts
+- Π += 3 hosts
+- Νέο router στο Ηράκλειο (Η) με 8 hosts
+
+**Απάντηση**:
+
+- Θ1 += 3 hosts -> 3+12 hosts + 1 router = 16 -> 2^5=32 -> /27 -> 195.251.123.96/27 (195.251.123.96-127) (Οι προηγούμενες IP μένουν κενές)
+- Π += 3 hosts -> 3+4 hosts + 1 router = 8 -> 2^4=16 -> /28 -> 195.251.123.16/28 (195.251.123.16-31) (Οι προηγούμενες IP μένουν κενές)
+- Ηράκλειο (Η) -> 8 hosts + 1 router = 9 -> 2^4=16 -> /28 -> 195.251.123.64/28 (195.251.123.64-79) (Θα αναγκαστώ να μετακινήσω κάτι και επιλέγω το Α-Λ γτ θα μετακινηθουν τα λιγότερα hosts)
+- Αναγκαστική Μετακίνηση:
+  - Α-Λ -> 2 hosts + 2 routers = 4 -> 2^2=4 -> /30 -> 195.251.123.48/30 (195.251.123.48-51)
+
+> Με βάση το παραπάνω note μου, πλεον ο κατακερματισμός είναι κάπως έτσι:
+> - | Α (16)                          | Π (16)                                  |
+> - | Θ2 (8)              | empty (8) | Α-Λ (4) | empty (4) | Α-Θ (4) | Α-Π (4) |
+> - | Η (16)                          | Λ (16)                                  |
+> - | Θ1 (32)                                                                   |
+
+
+## 10/1/2024 - ? Μάθημα (Επανάληψη Ύλης)
+
+- Ανάλυση των θεματων της εξετασης στις 2/2/23
+
+**Άσκηση 1**:
+
+μεγεθος IP πακέτου = 1220 bytes
+MTU ζευξης = 620 bytes
+
+Βρείτε τα πεδία 
+- length
+- MF
+- offset
+
+**Απάντηση**:
+
+packet size = 1220 bytes -> 1200 bytes data + 20 bytes header
+MTU = 620 bytes -> 600 bytes data + 20 bytes header -> 600 bytes data
+
+600/8 = 75
+
+1. fragment:
+   - length = 620 bytes
+   - MF = 1
+   - offset = 0
+2. fragment:
+   - length = 620 bytes
+   - MF = 0
+   - offset = 75
+
+
+**Άσκηση 2**:
+
+μεγεθος IP πακέτου = 1220 bytes
+MTU ζευξης = 610 bytes
+
+Βρείτε τα πεδία
+- length
+- MF
+- offset
+
+
+**Απάντηση**:
+
+packet size = 1220 bytes -> 1200 bytes data + 20 bytes header
+MTU = 610 bytes -> 590 bytes data + 20 bytes header -> 590 bytes data
+
+590/8 = 73.75 -> 73 -> 73*8 = 584 bytes
+
+1. fragment:
+   - length = 584 + 20 = 604 bytes
+   - MF = 1
+   - offset = 0
+2. fragment: (616 bytes remaining)
+   - length = 584 + 20 = 604 bytes 
+   - MF = 1
+   - offset = 73
+3. fragment: (32 bytes remaining)
+    - length = 32 + 20 = 52 bytes 
+    - MF = 0
+    - offset = 146
+
+

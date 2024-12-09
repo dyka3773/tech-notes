@@ -13,6 +13,7 @@
 - [Variables](#variables)
 - [Comments](#comments)
 - [Variable Scope](#variable-scope)
+- [Typing hinting](#typing-hinting)
 - [Advanced (Quirky) Python Features To Explore](#advanced-quirky-python-features-to-explore)
 
 
@@ -56,6 +57,10 @@ Python has the following built-in types:
 
 And of course, we can create our own types by using classes.
 
+> **Fun Fact 1**: In Python, integers have unlimited precision. This means that you can work with very large numbers without worrying about overflow. But this comes at the cost of speed.
+
+> **Fun Fact 2**: Small integers in Python are cached. This means that the same small integer object is reused when you create a new integer object with the same value. This is done to save memory. The range of numbers that are cached is from -5 to 256.
+
 
 ## Variables
 
@@ -90,7 +95,6 @@ x = 'John'
 > sed do eiusmod tempor incididunt
 > ut labore et dolore magna aliqua."""
 > ```
-
 
 Variable names are case-sensitive.
 
@@ -185,7 +189,21 @@ def myfunc():
 myfunc() # This will print 300
 print(x) # And this will also print 300
 ```
-> **Note**: This is not recommended, as it can cause confusion and lead to bugs. 
+> **Note**: This is not recommended, as it can cause confusion and lead to bugs.
+
+
+## Typing hinting
+
+Python is a dynamically typed language, which means that you don't have to declare the type of a variable when you create one.
+However, you can use type hinting to specify the type of a variable.
+
+```python
+x: int = 1
+y: str = "Hello"
+z: float = 1.0
+```
+
+This is usually done for documentation purposes and to make the code more readable and it is strongly recommended to use it.
 
 
 ## Advanced (Quirky) Python Features To Explore
@@ -207,6 +225,14 @@ Here are some of these features:
 - Generators
 - f-strings and their shorthand
   > [Official Docs](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+- `*args` and `**kwargs`
+  > [My Notes](./conventions.md/#args-and-kwargs) on this
+- `__slots__`
+  > [Best StackOverflow Answer](https://stackoverflow.com/a/28059785/15552149)
+- Global Interpreter Lock (GIL)
+- Context Managers
+- `__call__`
+- Generics in type hinting
 
   
 <!-- FIXME: Enhance this as you go -->

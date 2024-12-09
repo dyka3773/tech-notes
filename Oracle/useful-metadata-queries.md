@@ -91,6 +91,18 @@ FROM ALL_SYNONYMS;
 ```
 > **Note:** `TABLE_OWNER` and `TABLE_NAME` columns are the owner of the table and the name of the table that the synonym points to and `SYNONYM_NAME` is the name of the synonym. `OWNER` column is the owner of the synonym.
 
+> **Note 2:** A useful query that derives from the above is to find synonyms that point to tables that do not exist in the database (eg tables that have been dropped but the synonym has not been removed).
+> This can be done by using the following query:
+> 
+> ```sql
+> SELECT *
+> FROM ALL_SYNONYMS
+> WHERE TABLE_NAME NOT IN (
+>     SELECT DISTINCT TABLE_NAME
+>     FROM ALL_TABLES
+> );
+> ```
+
 ## Sequences that Belong to The Current User
 
 ```sql

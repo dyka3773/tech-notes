@@ -7,6 +7,7 @@
 - [Casing](#casing)
 - [Example Conventions](#example-conventions)
 - [`this` and `self`](#this-and-self)
+- [`self` vs `cls`](#self-vs-cls)
 - [`*args` and `**kwargs`](#args-and-kwargs)
 - [General Coding Style](#general-coding-style)
 
@@ -51,6 +52,23 @@ foo = Foo(1)
 foo.bar() # 1
 ```
 
+## `self` vs `cls`
+
+Even though `self` is the most common name used for the first argument of a method, `cls` is also used in class methods to refer to the class itself.
+Python will still pass the class reference as the first argument to the method, but it is a convention to use `cls` instead of `self` in class methods.
+
+```python
+class Foo:
+    x = 0
+
+    @classmethod
+    def bar(cls):
+        cls.x += 1
+        print(cls.x)
+
+Foo.bar() # 1
+Foo.bar() # 2
+```
 
 ## `*args` and `**kwargs`
 

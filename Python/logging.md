@@ -65,7 +65,7 @@ app.log
 
 > **NOTE 3**: By default the logger will append to the log file. If you want to overwrite the file each time you run the program, you can add `filemode='w'` to the `basicConfig` function.
 
-
+<!-- TODO: Add logger inheritance section -->
 
 <!-- links -->
 [LogRecord Attributes]: https://docs.python.org/3/library/logging.html#logrecord-attributes

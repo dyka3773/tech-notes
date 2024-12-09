@@ -10,7 +10,6 @@
 - [GitHub special files and paths](#github-special-files-and-paths)
 - [Useful .gitattributes templates](#useful-gitattributes-templates)
 - [HTML5 Website Templates](#html5-website-templates)
-- [Remote Jobs](#remote-jobs)
 - [Contribute To This Project](#contribute-to-this-project)
 - [Public APIs](#public-apis)
 - [Games on GitHub](#games-on-github)
@@ -68,13 +67,6 @@ Description: A collection of useful `.gitattributes` templates
 Link: [Here](https://github.com/learning-zone/website-templates)
 
 Description: 150+ HTML5 Website Templates
-
-
-## Remote Jobs
-
-Link: [Here](https://github.com/aqeelsidd/remote-jobs)
-
-Description: A list of semi to fully remote-friendly companies in tech.
 
 
 ## Contribute To This Project
